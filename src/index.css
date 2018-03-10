@@ -13,6 +13,8 @@
     font-size: 18px;
     letter-spacing: 0.5px;
     padding: 28px 0 16px;
+    font-weight: bold;
+    margin: 0;
 }
 
 .photoRedSocial>h2>a {
