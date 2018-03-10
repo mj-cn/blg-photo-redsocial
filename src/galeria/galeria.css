@@ -24,7 +24,7 @@
  
 /* Handle */
 .galeria>div::-webkit-scrollbar-thumb {
-    background: rgba(218, 82, 32, 0.75); 
+    background: rgb(171, 170, 170)
 }
 
 .galeria>div {
