@@ -13,14 +13,24 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-.galeria>div:hover {
-    overflow-x: auto;
+.galeria>div::-webkit-scrollbar {
+    height:6px;
+}
+
+/* Track */
+.galeria>div::-webkit-scrollbar-track {
+    background: #f4f4f4; 
+}
+ 
+/* Handle */
+.galeria>div::-webkit-scrollbar-thumb {
+    background: rgba(218, 82, 32, 0.75); 
 }
 
 .galeria>div {
     position: relative;
     display: block;
-    overflow-x: hidden;
+    overflow-x: auto;
     margin: 0;
     padding: 0;
 }
