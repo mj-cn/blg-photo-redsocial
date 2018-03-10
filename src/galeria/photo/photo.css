@@ -1,0 +1,67 @@
+.photo {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    width: 240px;
+}
+
+@media (max-width: 1151px) {
+    .photo {
+        width: 180px;
+    }
+}
+
+.photo>div {
+    position: relative;
+    display: block;
+}
+
+.photo>div>a {
+    outline: none;
+    color: #444;
+}
+
+.photo>div>a>img {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+.photo div.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(218, 82, 32, 0.75);
+    display: flex;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+    opacity: 0;
+}
+
+.photo div.overlay:hover {
+    opacity: 1;
+}
+
+.photo div.overlay>div {
+    margin: auto;
+    z-index: 999;
+}
+
+.photo div.overlay>div>ul {
+    margin-bottom: 0;
+}
+
+.photo div.overlay>div>ul>li,
+.photo div.overlay>div>ul>li>a {
+    color: #fff;
+    font-size: 14px;
+}
+
+.photo div.overlay>div>ul>li>a>i {
+    margin-right: 3px;
+}
