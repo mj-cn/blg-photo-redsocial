@@ -28,7 +28,7 @@ function mapData(data: Array<any>): Array<IProps> {
             like: data.likes.count,
             comment: data.comments.count,
             link: data.link,
-            image: data.images.standard_resolution.url
+            image: data.images.low_resolution.url
         })
     })
     return result;
