@@ -1,38 +1,38 @@
 import * as React from 'react';
 import './galeria.css';
 import { galeria } from './galeria.css';
-import { Photo } from './photo';
+import { Photo, IProps } from './photo';
+import { getPhoto } from './service.galeria';
 
-export class Galeria extends React.Component {
+
+export class Galeria extends React.Component<{}, { listaFoto: Array<IProps> }> {
+
+    constructor(props: {}) {
+        super(props);
+        this.state = {
+            listaFoto: []
+        }
+    }
+
+    async componentDidMount() {
+        let lista = await getPhoto();
+        this.setState({ listaFoto: lista });
+    }
+
     render() {
         return (
             <div className={galeria}>
                 <div>
                     <ul>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
-                        <li><Photo /></li>
+                        {
+                            this.state.listaFoto.map((foto, index) => {
+                                return (
+                                    <li key={index}>
+                                        <Photo {...foto} />
+                                    </li>
+                                )
+                            })
+                        }
                     </ul>
                 </div>
             </div>
