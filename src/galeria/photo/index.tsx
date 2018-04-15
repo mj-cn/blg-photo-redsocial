@@ -16,14 +16,16 @@ export const Photo = (props: IProps) => {
                 <a href={props.link}>
                     <img src={props.image} alt="" />
                 </a>
-                <div className={overlay}>
-                    <div>
-                        <ul className="list-inline text-center">
-                            <li><a href=""><i className="fa fa-heart-o"></i></a>{props.like}</li>
-                            <li><a href=""><i className="fa fa-comment-o"></i></a>{props.comment}</li>
-                        </ul>
+                <a href={props.link}>
+                    <div className={overlay}>
+                        <div>
+                            <ul className="list-inline text-center">
+                                <li><a href="javascript:void(0)"><i className="fa fa-heart-o"></i></a>{props.like}</li>
+                                <li><a href="javascript:void(0)"><i className="fa fa-comment-o"></i></a>{props.comment}</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     )
