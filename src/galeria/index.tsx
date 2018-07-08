@@ -1,6 +1,5 @@
 import * as React from 'react';
-import './galeria.css';
-import { galeria } from './galeria.css';
+import './galeria.scss';
 import { Photo, IProps } from './photo';
 import { getPhoto } from './service.galeria';
 
@@ -21,7 +20,7 @@ export class Galeria extends React.Component<{}, { listaFoto: Array<IProps> }> {
 
     render() {
         return (
-            <div className={galeria}>
+            <div className="galeria">
                 <div>
                     <ul>
                         {

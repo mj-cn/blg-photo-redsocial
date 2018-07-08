@@ -1,12 +1,13 @@
 {
   "name": "blg-photo-redsocial",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "rm -rf ./dist && webpack --mode production",
-    "start": "rm -rf ./dist && webpack --config webpack.dev.js --mode development"
+    "build": "rm -rf ./dist & webpack --mode production",
+    "build:dev": "rm -rf ./dist & webpack --config webpack.dev.js --mode development",
+    "start": "node ./dev/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -19,12 +20,14 @@
     "awesome-typescript-loader": "^4.0.1",
     "bootstrap": "^3.3.7",
     "css-loader": "^0.28.10",
+    "express": "^4.16.3",
     "font-awesome": "^4.7.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "node-sass": "^4.9.2",
+    "optimize-css-assets-webpack-plugin": "^4.0.3",
     "react-dom": "^16.2.0",
-    "source-map-loader": "^0.2.3",
-    "style-loader": "^0.20.3",
+    "sass-loader": "^7.0.3",
     "typescript": "^2.7.2",
-    "typings-for-css-modules-loader": "^1.7.0",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.11"
   },

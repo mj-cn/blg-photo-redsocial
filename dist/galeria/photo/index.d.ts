@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import './photo.css';
+import './photo.scss';
 export interface IProps {
     like: number;
     comment: number;

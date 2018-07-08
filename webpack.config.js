@@ -1,3 +1,5 @@
+const miniCSSExtractPluging = require('mini-css-extract-plugin');
+const optimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 module.exports = {
     entry: "./src/index.tsx",
     output: {
@@ -14,36 +16,28 @@ module.exports = {
     },
 
     module: {
-        rules: [
-            // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-            {
-                test: /\.tsx?$/,
-                loader: "awesome-typescript-loader"
-            },
-
-            // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-            {
-                enforce: "pre",
-                test: /\.js$/,
-                loader: "source-map-loader"
-            },
-
-            //load css
-            {
-                test:/\.css?$/,
-                use: [
-                   'style-loader',
-                   {
-                     loader: 'typings-for-css-modules-loader',
-                     options: {
-                       modules: true,
-                       namedExport: true
-                     }
-                   }
-                 ]
-            }
-        ]
+        rules: [{
+            test: /\.tsx?$/,
+            loader: "awesome-typescript-loader"
+        }, {
+            test: /\.scss$/,
+            use: [{
+                    loader: miniCSSExtractPluging.loader,
+                }, {
+                    loader: 'css-loader',
+                },
+                {
+                    loader: 'sass-loader',
+                }
+            ]
+        }]
     },
+    plugins: [
+        new optimizeCSSAssetsPlugin(),
+        new miniCSSExtractPluging({
+            filename: 'index.css',
+        }),
+    ],
     externals: {
         react: "react"
     }

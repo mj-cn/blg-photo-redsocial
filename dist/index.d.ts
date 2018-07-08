@@ -1,3 +1,3 @@
 /// <reference types="react" />
-import './index.css';
+import './index.scss';
 export declare function PhotoRedSocial(): JSX.Element;
